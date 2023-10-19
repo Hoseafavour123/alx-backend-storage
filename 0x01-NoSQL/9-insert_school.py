@@ -7,5 +7,5 @@ def insert_school(mongo_collection, **kwargs):
     school = {}
     for k, v in kwargs.items():
         school[k] = v
-    result = mongo_collection.insert(school)
-    return result._id
+    result = mongo_collection.insert_one(school)
+    return result.inserted_id
